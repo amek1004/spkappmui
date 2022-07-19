@@ -125,17 +125,22 @@ export default function MiniDrawer(props) {
           </IconButton>
 
           <Typography variant="h6" noWrap component="div">
-            <Link href="/">
+            <Link style={{ textDecoration: "none" }} href="/">
               <a>Swissport Korea</a>
             </Link>
+            <style jsx>
+              {`
+                a {
+                  text-decoration: none;
+                  color: aliceblue;
+                }
+              `}
+            </style>
           </Typography>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-          <Typography variant="h6" noWrap component="div">
-            Swissport Korea
-          </Typography>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
