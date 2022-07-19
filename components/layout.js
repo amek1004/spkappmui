@@ -142,7 +142,7 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <MenuList>
-          <MenuItem sx={{ py: 1.5 }}>
+          <MenuItem sx={{ py: 1, justifyContent: open ? "initial" : "center" }}>
             <ListItemIcon
               sx={{
                 minWidth: 0,
@@ -157,7 +157,7 @@ export default function MiniDrawer() {
               primary="Flight information"
             />
           </MenuItem>
-          <MenuItem sx={{ py: 1.5 }}>
+          <MenuItem sx={{ py: 1, justifyContent: open ? "initial" : "center" }}>
             <ListItemIcon
               sx={{
                 minWidth: 0,
@@ -167,7 +167,10 @@ export default function MiniDrawer() {
             >
               <ContentCut fontSize="small" />
             </ListItemIcon>
-            <ListItemText sx={{ opacity: open ? 1 : 0 }} primary="Cut" />
+            <ListItemText
+              sx={{ opacity: open ? 1 : 0 }}
+              primary="Flight information"
+            />
           </MenuItem>
         </MenuList>
         <Divider />
