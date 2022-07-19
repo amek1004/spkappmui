@@ -153,7 +153,7 @@ export default function MiniDrawer() {
               <ContentCut fontSize="small" />
             </ListItemIcon>
             <ListItemText
-              sx={{ opacity: open ? 1 : 0, ml: -1 }}
+              sx={{ opacity: open ? 1 : 0 }}
               primary="Flight information"
             />
           </MenuItem>
@@ -167,10 +167,7 @@ export default function MiniDrawer() {
             >
               <ContentCut fontSize="small" />
             </ListItemIcon>
-            <ListItemText
-              sx={{ opacity: open ? 1 : 0, ml: -1 }}
-              primary="Cut"
-            />
+            <ListItemText sx={{ opacity: open ? 1 : 0 }} primary="Cut" />
           </MenuItem>
         </MenuList>
         <Divider />
