@@ -25,6 +25,7 @@ import ContentCopy from "@mui/icons-material/ContentCopy";
 import ContentPaste from "@mui/icons-material/ContentPaste";
 import Cloud from "@mui/icons-material/Cloud";
 import { spacing } from "@mui/system";
+import Link from "next/link";
 
 const drawerWidth = 240;
 
@@ -93,7 +94,7 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function MiniDrawer() {
+export default function MiniDrawer(props) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -122,8 +123,11 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
+
           <Typography variant="h6" noWrap component="div">
-            Swissport Korea
+            <Link href="/">
+              <a>Swissport Korea</a>
+            </Link>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -142,21 +146,22 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <MenuList>
-          <MenuItem sx={{ py: 1, justifyContent: open ? "initial" : "center" }}>
-            <ListItemIcon
-              sx={{
-                minWidth: 0,
-                mr: open ? 3 : "auto",
-                justifyContent: "center",
-              }}
+          <Link href="/about">
+            <MenuItem
+              sx={{ py: 1, justifyContent: open ? "initial" : "center" }}
             >
-              <ContentCut fontSize="small" />
-            </ListItemIcon>
-            <ListItemText
-              sx={{ opacity: open ? 1 : 0 }}
-              primary="Flight information"
-            />
-          </MenuItem>
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <ContentCut fontSize="small" />
+              </ListItemIcon>
+              <ListItemText sx={{ opacity: open ? 1 : 0 }} primary="About" />
+            </MenuItem>
+          </Link>
           <MenuItem sx={{ py: 1, justifyContent: open ? "initial" : "center" }}>
             <ListItemIcon
               sx={{
@@ -201,7 +206,7 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <h1>여기에 카테고리 바인딩</h1>
+        {props.mainPage}
       </Box>
     </Box>
   );
