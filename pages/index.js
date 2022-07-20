@@ -7,13 +7,12 @@ export default function Home() {
         <title>Home | Next Movies</title>
       </Head>
 
-      <div className="m">드디어 들어 왔다!!!!! ㅋㅋㅋㅋ</div>
+      <div className="m">여기는 HOME </div>
       <style jsx>{`
         .m {
-          font-size: 50px;
-          color: skyblue;
+          font-size: 30px;
+          color: rgb(0, 0, 0);
           padding: 0px;
-          text-shadow: 10px;
         }
       `}</style>
     </div>

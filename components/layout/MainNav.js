@@ -27,6 +27,7 @@ import Cloud from "@mui/icons-material/Cloud";
 import { spacing } from "@mui/system";
 import Link from "next/link";
 import { Container } from "@mui/material";
+import FlightLandIcon from "@mui/icons-material/FlightLand";
 
 const drawerWidth = 240;
 
@@ -163,26 +164,30 @@ export default function MiniDrawer(props) {
                   justifyContent: "center",
                 }}
               >
-                <ContentCut fontSize="small" />
+                <FlightLandIcon fontSize="medium" />
               </ListItemIcon>
-              <ListItemText sx={{ opacity: open ? 1 : 0 }} primary="About" />
+              <ListItemText
+                sx={{ opacity: open ? 1 : 0 }}
+                primary="Flight Information"
+              />
             </MenuItem>
           </Link>
-          <MenuItem sx={{ py: 1, justifyContent: open ? "initial" : "center" }}>
-            <ListItemIcon
-              sx={{
-                minWidth: 0,
-                mr: open ? 3 : "auto",
-                justifyContent: "center",
-              }}
+          <Link href="/user">
+            <MenuItem
+              sx={{ py: 1, justifyContent: open ? "initial" : "center" }}
             >
-              <ContentCut fontSize="small" />
-            </ListItemIcon>
-            <ListItemText
-              sx={{ opacity: open ? 1 : 0 }}
-              primary="Flight information"
-            />
-          </MenuItem>
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <ContentCut fontSize="small" />
+              </ListItemIcon>
+              <ListItemText sx={{ opacity: open ? 1 : 0 }} primary="Users" />
+            </MenuItem>
+          </Link>
         </MenuList>
         <Divider />
         {/* <List>
