@@ -177,7 +177,7 @@ export default function MiniDrawer(props) {
               />
             </MenuItem>
           </Link>
-          <Link href="/user">
+          {/* <Link href="/user">
             <MenuItem
               sx={{ py: 1, justifyContent: open ? "initial" : "center" }}
             >
@@ -192,7 +192,7 @@ export default function MiniDrawer(props) {
               </ListItemIcon>
               <ListItemText sx={{ opacity: open ? 1 : 0 }} primary="Users" />
             </MenuItem>
-          </Link>
+              </Link> */}
         </MenuList>
         <Divider />
         {/* <List>

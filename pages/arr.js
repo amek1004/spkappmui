@@ -1,24 +1,22 @@
 import axios from "axios";
 
-const Users = ({ users }) => (
+const Arrs = ({ arrs }) => (
   <>
     <h1>Arrival Information</h1>
     <ul>
-      {users.map((user) => (
-        <li key={user.id}>
-          {user.name}: {user.email}
-        </li>
+      {arrs.map((items) => (
+        <li key={items.id}>{id.carousel}</li>
       ))}
     </ul>
   </>
 );
 
-Users.getInitialProps = async () => {
-  const { data: users } = await axios.get(
-    "https://jsonplaceholder.typicode.com/users"
+Arrs.getInitialProps = async () => {
+  const arrs = await axios.get(
+    "https://apis.data.go.kr/B551177/StatusOfPassengerFlightsOdp/getPassengerArrivalsOdp?serviceKey=0HUlOoacEL2nXPo2eFcKC8qHfvHxgvFHGMn5cATNvP4fSdzPnEy5GVhFT34EtAVP8aBGIJGT%2B7ul28On6M8mtQ%3D%3D&from_time=0000&to_time=2400&airline=LH&lang=K&type=json"
   );
-  console.log("data loaded");
-  return { users };
+  console.log(arrs);
+  return { arrs };
 };
 
-export default Users;
+export default Arrs;

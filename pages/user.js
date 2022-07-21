@@ -1,4 +1,4 @@
-/* export default function Users({ users }) {
+export default function Users({ users }) {
   return (
     <article>
       {users.map((u) => (
@@ -19,4 +19,4 @@ export async function getStaticProps() {
       users,
     },
   };
-} */
+}
