@@ -119,11 +119,16 @@ export default function MiniDrawer(props) {
             onClick={handleDrawerOpen}
             edge="start"
             sx={{
-              marginRight: 5,
+              marginRight: 3,
               ...(open && { display: "none" }),
             }}
           >
-            <MenuIcon />
+            <MenuIcon
+              sx={{
+                ml: 0.3,
+                justifyContent: "center",
+              }}
+            />
           </IconButton>
 
           <Typography variant="h6" noWrap component="div">
