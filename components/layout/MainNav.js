@@ -128,7 +128,7 @@ export default function MiniDrawer(props) {
 
           <Typography variant="h6" noWrap component="div">
             <Link style={{ textDecoration: "none" }} href="/">
-              <a>Swissport Korea</a>
+              <a>Swissport Korea BSA</a>
             </Link>
             <style jsx>
               {`
@@ -153,7 +153,7 @@ export default function MiniDrawer(props) {
         </DrawerHeader>
         <Divider />
         <MenuList>
-          <Link href="/about">
+          <Link href="/arr">
             <MenuItem
               sx={{ py: 1, justifyContent: open ? "initial" : "center" }}
             >
@@ -168,7 +168,7 @@ export default function MiniDrawer(props) {
               </ListItemIcon>
               <ListItemText
                 sx={{ opacity: open ? 1 : 0 }}
-                primary="Flight Information"
+                primary="Arrival Information"
               />
             </MenuItem>
           </Link>
