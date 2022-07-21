@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export default function Arr(props) {
+export default function time(props) {
   const { dateTime } = props;
+
   return (
     <div>
-      <h1>Arrival Information</h1>
-      <h2>{dateTime}</h2>
+      <h1>{dateTime} </h1>
     </div>
   );
 }
