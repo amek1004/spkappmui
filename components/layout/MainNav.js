@@ -158,7 +158,7 @@ export default function MiniDrawer(props) {
         </DrawerHeader>
         <Divider />
         <MenuList>
-          <Link href="/arr">
+          <Link href="/arrs">
             <MenuItem
               sx={{ py: 1, justifyContent: open ? "initial" : "center" }}
             >
