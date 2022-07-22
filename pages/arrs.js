@@ -2,19 +2,19 @@ import Link from "next/link";
 import axios from "axios";
 import React from "react";
 
-export default function Arrs(props) {
-  const arrs = props;
-  const { arrsData } = arrs;
+export default function arrsData(props) {
+  const { arrs } = props;
+
   return (
     <div>
       <h1>Arrival Information</h1>
 
-      <h5>{arrsData}</h5>
+      <h5>{arrs}</h5>
     </div>
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const url =
     "http://apis.data.go.kr/B551177/StatusOfPassengerFlightsOdp/getPassengerArrivalsOdp"; /*URL*/
   let queryParams =
@@ -34,7 +34,7 @@ export async function getServerSideProps() {
   queryParams +=
     "&" + encodeURIComponent("flight_id") + "=" + encodeURIComponent(""); /**/
   queryParams +=
-    "&" + encodeURIComponent("airline") + "=" + encodeURIComponent("KE"); /**/
+    "&" + encodeURIComponent("airline") + "=" + encodeURIComponent("LH"); /**/
   queryParams +=
     "&" + encodeURIComponent("lang") + "=" + encodeURIComponent("K"); /**/
   queryParams +=
@@ -42,7 +42,7 @@ export async function getServerSideProps() {
 
   const res = await axios.get(url + queryParams);
 
-  const data = await res.data;
+  const datas = await res.data;
 
-  return { props: { data } };
+  return { props: { datas } };
 }
