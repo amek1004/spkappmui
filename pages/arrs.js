@@ -1,8 +1,8 @@
 import axios from "axios";
 import React from "react";
 
-export default function arrsData(list) {
-  const { arrs } = list;
+export default function arrsData(arrlist) {
+  const { arrs } = arrlist;
 
   return (
     <div>
@@ -42,10 +42,12 @@ export async function getStaticProps() {
   const res = await axios.get(url + queryParams);
 
   const data = await res.data;
+  const datas = data;
+  console.log(datas);
 
   return {
     props: {
-      list: data,
+      arrlist: datas,
     },
     revalidate: 5,
     // 20초가 지난 후 접속이 일어나면 파일을 새롭게 생성 (변경 사항이 반영되도록)
