@@ -1,9 +1,8 @@
-import Link from "next/link";
 import axios from "axios";
 import React from "react";
 
-export default function arrsData(props) {
-  const { arrs } = props;
+export default function arrsData(list) {
+  const { arrs } = list;
 
   return (
     <div>
@@ -42,7 +41,13 @@ export async function getStaticProps() {
 
   const res = await axios.get(url + queryParams);
 
-  const datas = await res.data;
+  const data = await res.data;
 
-  return { props: { datas } };
+  return {
+    props: {
+      list: data,
+    },
+    revalidate: 5,
+    // 20초가 지난 후 접속이 일어나면 파일을 새롭게 생성 (변경 사항이 반영되도록)
+  };
 }
