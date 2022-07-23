@@ -18,9 +18,11 @@
     "@mui/material": "latest",
     "axios": "^0.27.2",
     "next": "latest",
+    "next-superjson": "^0.0.4",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "superjson": "^1.9.1"
   },
   "devDependencies": {
     "eslint": "latest",
