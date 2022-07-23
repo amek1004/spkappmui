@@ -42,7 +42,7 @@ export async function getStaticProps() {
   const res = await axios.get(url + queryParams);
 
   const data = await res.data;
-  const datas = data;
+  const datas = data.response;
   console.log(datas);
 
   return {
