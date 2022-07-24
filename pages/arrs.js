@@ -1,6 +1,12 @@
 import axios from "axios";
 import { object } from "prop-types";
 import React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 export default function arrData({ arrLists }) {
   //const arrs = arrlists;
@@ -13,15 +19,23 @@ export default function arrData({ arrLists }) {
       <ul>
         {arrLists.map((data) => (
           <li key={data.flightId}>
-            <box>
-              <h4>
-                Flight : {data.flightId} / 현재 상태 : {data.remark} / Gate :{" "}
-                {data.gatenumber}
-              </h4>
-              <p>
-                ETA : {data.estimatedDateTime} / Carousel : {data.carousel}
-              </p>
-            </box>
+            <Card sx={{ minWidth: 275 }}>
+              <CardContent>
+                <box>
+                  <Typography
+                    sx={{ fontSize: 14 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    Flight : {data.flightId} / 현재 상태 : {data.remark} / Gate
+                    : {data.gatenumber}
+                  </Typography>
+                  <p>
+                    ETA : {data.estimatedDateTime} / Carousel : {data.carousel}
+                  </p>
+                </box>
+              </CardContent>
+            </Card>
           </li>
         ))}
       </ul>
