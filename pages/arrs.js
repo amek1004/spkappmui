@@ -3,15 +3,15 @@ import { object } from "prop-types";
 import React from "react";
 
 export default function arrsData(arrlist) {
-  const { arrs } = arrlist[0].airline;
+  const arrs = arrlist;
+  console.log(arrlist);
   //const air = arrs[0].airline;
-  console.log(arrs);
 
   return (
     <div>
       <h1>Arrival Information</h1>
 
-      <h5>{obj.arrs[0].airline}</h5>
+      <h5></h5>
     </div>
   );
 }
@@ -47,13 +47,13 @@ export async function getStaticProps() {
   const data = await res.data;
   const datas = data.response;
   const dataList = datas.body;
-  const dataLists = dataList.items;
+  //const dataLists = dataList.items;
   //const flightids = dataLists.flightId;
-  //console.log(dataLists);
+  //console.log(dataList);
 
   return {
     props: {
-      arrlist: dataLists,
+      arrlist: dataList,
     },
     revalidate: 5,
     // 20초가 지난 후 접속이 일어나면 파일을 새롭게 생성 (변경 사항이 반영되도록)
