@@ -1,8 +1,9 @@
 import axios from "axios";
+import { object } from "prop-types";
 import React from "react";
 
-export default function arrsData(arrList) {
-  const arrs = arrList[0];
+export default function arrsData(arrlist) {
+  const { arrs } = arrlist[0].airline;
   //const air = arrs[0].airline;
   console.log(arrs);
 
@@ -10,7 +11,7 @@ export default function arrsData(arrList) {
     <div>
       <h1>Arrival Information</h1>
 
-      <h5></h5>
+      <h5>{obj.arrs[0].airline}</h5>
     </div>
   );
 }
@@ -52,7 +53,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      arrList: dataLists,
+      arrlist: dataLists,
     },
     revalidate: 5,
     // 20초가 지난 후 접속이 일어나면 파일을 새롭게 생성 (변경 사항이 반영되도록)
