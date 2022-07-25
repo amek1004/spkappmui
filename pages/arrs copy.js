@@ -16,28 +16,30 @@ export default function arrData({ arrLists }) {
   //console.log(arrLists);
 
   return (
-    <ul>
-      {arrLists.map((data) => (
-        <li key={data.flightId}>
-          <Paper sx={{ p: 2, mb: 2 }} elevation="3">
-            <Typography
-              sx={{ fontSize: 13 }}
-              color="text.secondary"
-              gutterBottom
-            >
-              Flight : {data.flightId} / Status : {data.remark} / Gate :{" "}
-              {data.gatenumber} <br />
-              ETA : {data.estimatedDateTime} / Carousel : {data.carousel}
-            </Typography>
-          </Paper>
-        </li>
-      ))}
+    <box sx={{}}>
+      <ul>
+        {arrLists.map((data) => (
+          <li key={data.flightId}>
+            <Paper sx={{ p: 2, mb: 2 }} elevation="3">
+              <Typography
+                sx={{ fontSize: 13 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Flight : {data.flightId} / Status : {data.remark} / Gate :{" "}
+                {data.gatenumber} <br />
+                ETA : {data.estimatedDateTime} / Carousel : {data.carousel}
+              </Typography>
+            </Paper>
+          </li>
+        ))}
+      </ul>
       <style jsx>{`
         ul {
           list-style: none;
         }
       `}</style>
-    </ul>
+    </box>
   );
 }
 

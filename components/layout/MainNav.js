@@ -220,11 +220,9 @@ export default function MiniDrawer(props) {
           ))}
                 </List> */}
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 5, ml: -6 }}>
         <DrawerHeader />
-        <Container>
-          <box>{props.mainPage}</box>
-        </Container>
+        <Container>{props.mainPage}</Container>
       </Box>
     </Box>
   );
