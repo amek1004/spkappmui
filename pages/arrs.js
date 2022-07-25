@@ -72,8 +72,8 @@ export async function getStaticProps() {
   const res = await axios.get(url + queryParams);
 
   const data = await res.data;
-  const datas = data.response;
-  const dataList = datas.body.items;
+  const datas = data.response.body.items;
+  const dataList = datas;
   //const dataLists = dataList.items;
   //const flightids = dataLists.flightId;
   //console.log(dataList);
