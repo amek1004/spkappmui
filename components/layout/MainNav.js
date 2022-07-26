@@ -28,6 +28,9 @@ import { spacing } from "@mui/system";
 import Link from "next/link";
 import { Container } from "@mui/material";
 import FlightLandIcon from "@mui/icons-material/FlightLand";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
 
 const drawerWidth = 240;
 
@@ -111,7 +114,7 @@ export default function MiniDrawer(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} elevation={0} color="inherit">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -127,24 +130,27 @@ export default function MiniDrawer(props) {
               sx={{
                 ml: 0.3,
                 justifyContent: "center",
+                color: "black",
               }}
             />
           </IconButton>
 
-          <Typography variant="h6" noWrap component="div">
-            <Link style={{ textDecoration: "none" }} href="/">
-              <a>Swissport Korea BSA</a>
-            </Link>
-            <style jsx>
-              {`
-                a {
-                  text-decoration: none;
-                  color: aliceblue;
-                }
-              `}
-            </style>
-          </Typography>
+          <Box sx={{ width: 1500 }}>
+            <Grid container justifyContent="right">
+              <Tooltip disableFocusListener title="Go Home" arrow>
+                <Grid item>
+                  <Link href="/">
+                    <img
+                      src="/swissport logo.png"
+                      style={{ width: 110, marginTop: 6 }}
+                    />
+                  </Link>
+                </Grid>
+              </Tooltip>
+            </Grid>
+          </Box>
         </Toolbar>
+        <Divider />
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
@@ -157,10 +163,10 @@ export default function MiniDrawer(props) {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <MenuList>
+        <MenuList sx={{ py: 1 }}>
           <Link href="/arrs">
             <MenuItem
-              sx={{ py: 1, justifyContent: open ? "initial" : "center" }}
+              sx={{ py: 2, justifyContent: open ? "initial" : "center" }}
             >
               <ListItemIcon
                 sx={{
@@ -177,48 +183,23 @@ export default function MiniDrawer(props) {
               />
             </MenuItem>
           </Link>
-          {/* <Link href="/user">
-            <MenuItem
-              sx={{ py: 1, justifyContent: open ? "initial" : "center" }}
+          <MenuItem sx={{ py: 2, justifyContent: open ? "initial" : "center" }}>
+            <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: open ? 3 : "auto",
+                justifyContent: "center",
+              }}
             >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              >
-                <ContentCut fontSize="small" />
-              </ListItemIcon>
-              <ListItemText sx={{ opacity: open ? 1 : 0 }} primary="Users" />
-            </MenuItem>
-              </Link> */}
+              <FlightLandIcon fontSize="medium" />
+            </ListItemIcon>
+            <ListItemText
+              sx={{ opacity: open ? 1 : 0 }}
+              primary="Arrival Information"
+            />
+          </MenuItem>
         </MenuList>
         <Divider />
-        {/* <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-                </List> */}
       </Drawer>
       <Box component="main" sx={{ flexGrow: 5, ml: -6 }}>
         <DrawerHeader />

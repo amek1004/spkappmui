@@ -1,0 +1,4 @@
+https://apis.data.go.kr/B551177/StatusOfPassengerFlightsOdp/getPassengerArrivalsOdp?serviceKey=${API_KEY}&from_time=0000&to_time=2400&airline=LH&lang=K&type=json
+
+
+
