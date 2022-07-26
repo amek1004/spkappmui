@@ -172,21 +172,6 @@ export default function MiniDrawer(props) {
               />
             </MenuItem>
           </Link>
-          <MenuItem sx={{ py: 2, justifyContent: open ? "initial" : "center" }}>
-            <ListItemIcon
-              sx={{
-                minWidth: 0,
-                mr: open ? 3 : "auto",
-                justifyContent: "center",
-              }}
-            >
-              <FlightLandIcon fontSize="medium" />
-            </ListItemIcon>
-            <ListItemText
-              sx={{ opacity: open ? 1 : 0 }}
-              primary="Arrival Information"
-            />
-          </MenuItem>
         </MenuList>
         <Divider />
       </Drawer>

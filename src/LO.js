@@ -3,10 +3,8 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { List, ListItem } from "@mui/material";
-import Copyright from "../src/Copyright";
-import LO from "../src/LO";
 
-export default function arrData({ arrLists }) {
+export default function LO({ arrLists }) {
   return (
     <>
       <List>
@@ -30,7 +28,7 @@ export default function arrData({ arrLists }) {
   );
 }
 
-const airline = "LH";
+const airline = "LO";
 
 export async function getStaticProps() {
   const url =
