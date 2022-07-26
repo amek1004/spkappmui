@@ -1,15 +1,25 @@
 import axios from "axios";
+import { object } from "prop-types";
 import React from "react";
 import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { List, ListItem } from "@mui/material";
+import Paper from "@mui/material/Paper";
 
 export default function arrData({ arrLists }) {
+  //const arrs = arrlists;
+  //console.log(arrs);
+  //const air = arrs[0].airline;
+  //console.log(arrLists);
+
   return (
-    <List>
+    <ul>
       {arrLists.map((data) => (
-        <ListItem key={data.flightId} sx={{ pl: 3 }}>
-          <Box sx={{ display: "inline-flex", ml: 4, mt: 0 }}>
+        <li key={data.flightId}>
+          <Paper sx={{ pl: 1, mb: 2 }} elevation="0">
             <Typography
               sx={{ fontSize: 13 }}
               color="text.secondary"
@@ -19,14 +29,19 @@ export default function arrData({ arrLists }) {
               ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
               Status : {data.remark}
             </Typography>
-          </Box>
-        </ListItem>
+          </Paper>
+        </li>
       ))}
-    </List>
+      <style jsx>{`
+        ul {
+          list-style: none;
+        }
+      `}</style>
+    </ul>
   );
 }
 
-const airline = "PR";
+const airline = "EK";
 
 export async function getStaticProps() {
   const url =
@@ -62,12 +77,15 @@ export async function getStaticProps() {
   const data = await res.data;
   const datas = data.response.body.items;
   const dataList = datas;
+  //const dataLists = dataList.items;
+  //const flightids = dataLists.flightId;
+  //console.log(dataList);
 
   return {
     props: {
       arrLists: dataList,
     },
-    revalidate: 5,
+    // revalidate: 5,
     // 20초가 지난 후 접속이 일어나면 파일을 새롭게 생성 (변경 사항이 반영되도록)
   };
 }
