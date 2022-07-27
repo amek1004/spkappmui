@@ -5,16 +5,20 @@ import Typography from "@mui/material/Typography";
 import { List, ListItem } from "@mui/material";
 
 export default function arrData({ arrLists }) {
-  const FltNo = "OZ6782";
-  const KE5682 = arrLists.filter(function (arrLists) {
-    return arrLists.flightId === `${FltNo}`;
+  const FltNo = "";
+  const OZ6782 = arrLists.filter(function (arrLists) {
+    return arrLists.flightId === "OZ6782";
   });
+  const KE5682 = arrLists.filter(function (arrLists) {
+    return arrLists.flightId === "KE5682";
+  });
+
   return (
-    <>
-      <List>
-        {KE5682.map((data) => (
-          <ListItem key={data.flightId} sx={{ pl: 3 }}>
-            <Box sx={{ display: "inline-flex", ml: 4, mt: 0 }}>
+    <div>
+      <List sx={{ pb: 0, ml: 6 }}>
+        {OZ6782.map((data) => (
+          <ListItem key={data.flightId}>
+            <Box sx={{ display: "inline-flex" }}>
               <Typography
                 sx={{ fontSize: 12 }}
                 color="text.secondary"
@@ -28,7 +32,24 @@ export default function arrData({ arrLists }) {
           </ListItem>
         ))}
       </List>
-    </>
+      <List sx={{ pb: 0, ml: 6 }}>
+        {KE5682.map((data) => (
+          <ListItem key={data.flightId}>
+            <Box sx={{ display: "inline-flex" }}>
+              <Typography
+                sx={{ fontSize: 12 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Flight : {data.flightId} / Gate : {data.gatenumber} <br />
+                ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
+                Status : {data.remark}
+              </Typography>
+            </Box>
+          </ListItem>
+        ))}
+      </List>
+    </div>
   );
 }
 

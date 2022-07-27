@@ -177,7 +177,7 @@ export default function MiniDrawer(props) {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 5, ml: -6 }}>
         <DrawerHeader />
-        <Container>{props.mainPage}</Container>
+        {props.mainPage}
       </Box>
     </Box>
   );
