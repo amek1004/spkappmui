@@ -1,8 +1,8 @@
 import axios from "axios";
-import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { List, ListItem } from "@mui/material";
+import React, { useState } from "react";
 
 export default function arrData({ arrLists }) {
   const FltNo = "";
@@ -91,6 +91,7 @@ export async function getStaticProps() {
     props: {
       arrLists: dataList,
     },
+
     revalidate: 5,
     // 20초가 지난 후 접속이 일어나면 파일을 새롭게 생성 (변경 사항이 반영되도록)
   };

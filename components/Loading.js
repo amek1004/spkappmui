@@ -1,11 +1,14 @@
+import { Box } from "@mui/system";
 import React from "react";
 import { Background, LoadingText } from "../styles/style";
 
 export default function Loading() {
   return (
-    <Background>
-      <LoadingText>잠시만 기다려 주세요.</LoadingText>
-      <img src="/img/Magnify.gif" alt="로딩중" width="5%" />
-    </Background>
+    <div style={{ marginTop: 20 }}>
+      <Background>
+        <LoadingText>지금 찾고 있는 중이야 기다려 줄래?</LoadingText>
+        <img src="/Magnify.gif" alt="로딩중" width="10%" />
+      </Background>
+    </div>
   );
 }
