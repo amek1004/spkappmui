@@ -5,19 +5,35 @@ import { List, ListItem } from "@mui/material";
 import React, { useState } from "react";
 
 export default function arrData({ arrLists }) {
+  console.log(arrLists);
   const FltNo = "";
-  const OZ6782 = arrLists.filter(function (arrLists) {
-    return arrLists.flightId === "OZ6782";
+  const LH = arrLists.filter(function (arrLists) {
+    return arrLists.airline === "LUFTHANSA GERMAN AIRLINES";
   });
-  const KE5682 = arrLists.filter(function (arrLists) {
-    return arrLists.flightId === "KE5682";
+  const LO = arrLists.filter(function (arrLists) {
+    return arrLists.airline === "LOT POLISH AIRLINES";
+  });
+  const QH = arrLists.filter(function (arrLists) {
+    return arrLists.flightId === "QH450";
+  });
+  const AA = arrLists.filter(function (arrLists) {
+    return arrLists.airline === "AMERICAN AIRLINES";
+  });
+  const PR = arrLists.filter(function (arrLists) {
+    return arrLists.airline === "PHILIPPINE AIRLINES";
+  });
+  const TK = arrLists.filter(function (arrLists) {
+    return arrLists.airline === "TURKISH AIRLINES";
+  });
+  const EK = arrLists.filter(function (arrLists) {
+    return arrLists.flightId === "EK322";
   });
 
   return (
     <div>
       <List sx={{ pb: 0, ml: 6 }}>
-        {OZ6782.map((data) => (
-          <ListItem key={data.flightId}>
+        {LH.map((data) => (
+          <ListItem key={data.airline}>
             <Box sx={{ display: "inline-flex" }}>
               <Typography
                 sx={{ fontSize: 13 }}
@@ -34,8 +50,98 @@ export default function arrData({ arrLists }) {
         ))}
       </List>
       <List sx={{ pb: 0, ml: 6, pt: 0 }}>
-        {KE5682.map((data) => (
-          <ListItem key={data.flightId}>
+        {LO.map((data) => (
+          <ListItem key={data.airline}>
+            <Box sx={{ display: "inline-flex" }}>
+              <Typography
+                sx={{ fontSize: 13 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Flight : {data.flightId} / Dep : {data.airportCode} / Gate :{" "}
+                {data.gatenumber} <br />
+                ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
+                Status : {data.remark}
+              </Typography>
+            </Box>
+          </ListItem>
+        ))}
+      </List>
+      <List sx={{ pb: 0, ml: 6, pt: 0 }}>
+        {QH.map((data) => (
+          <ListItem key={data.airline}>
+            <Box sx={{ display: "inline-flex" }}>
+              <Typography
+                sx={{ fontSize: 13 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Flight : {data.flightId} / Dep : {data.airportCode} / Gate :{" "}
+                {data.gatenumber} <br />
+                ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
+                Status : {data.remark}
+              </Typography>
+            </Box>
+          </ListItem>
+        ))}
+      </List>
+      <List sx={{ pb: 0, ml: 6, pt: 0 }}>
+        {AA.map((data) => (
+          <ListItem key={data.airline}>
+            <Box sx={{ display: "inline-flex" }}>
+              <Typography
+                sx={{ fontSize: 13 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Flight : {data.flightId} / Dep : {data.airportCode} / Gate :{" "}
+                {data.gatenumber} <br />
+                ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
+                Status : {data.remark}
+              </Typography>
+            </Box>
+          </ListItem>
+        ))}
+      </List>
+      <List sx={{ pb: 0, ml: 6, pt: 0 }}>
+        {PR.map((data) => (
+          <ListItem key={data.airline}>
+            <Box sx={{ display: "inline-flex" }}>
+              <Typography
+                sx={{ fontSize: 13 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Flight : {data.flightId} / Dep : {data.airportCode} / Gate :{" "}
+                {data.gatenumber} <br />
+                ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
+                Status : {data.remark}
+              </Typography>
+            </Box>
+          </ListItem>
+        ))}
+      </List>
+      <List sx={{ pb: 0, ml: 6, pt: 0 }}>
+        {TK.map((data) => (
+          <ListItem key={data.airline}>
+            <Box sx={{ display: "inline-flex" }}>
+              <Typography
+                sx={{ fontSize: 13 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Flight : {data.flightId} / Dep : {data.airportCode} / Gate :{" "}
+                {data.gatenumber} <br />
+                ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
+                Status : {data.remark}
+              </Typography>
+            </Box>
+          </ListItem>
+        ))}
+      </List>
+      <List sx={{ pb: 0, ml: 6, pt: 0 }}>
+        {EK.map((data) => (
+          <ListItem key={data.airline}>
             <Box sx={{ display: "inline-flex" }}>
               <Typography
                 sx={{ fontSize: 13 }}
