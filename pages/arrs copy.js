@@ -1,47 +1,34 @@
 import axios from "axios";
-import { object } from "prop-types";
 import React from "react";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
+import { List, ListItem } from "@mui/material";
 
 export default function arrData({ arrLists }) {
-  //const arrs = arrlists;
-  //console.log(arrs);
-  //const air = arrs[0].airline;
-  //console.log(arrLists);
-
   return (
-    <ul>
-      {arrLists.map((data) => (
-        <li key={data.flightId}>
-          <Paper sx={{ pl: 1, mb: 2 }} elevation="0">
-            <Typography
-              sx={{ fontSize: 13 }}
-              color="text.secondary"
-              gutterBottom
-            >
-              Flight : {data.flightId} / Gate : {data.gatenumber} <br />
-              ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
-              Status : {data.remark}
-            </Typography>
-          </Paper>
-        </li>
-      ))}
-      <style jsx>{`
-        ul {
-          list-style: none;
-        }
-      `}</style>
-    </ul>
+    <>
+      <List>
+        {arrLists.map((data) => (
+          <ListItem key={data.flightId} sx={{ pl: 3 }}>
+            <Box sx={{ display: "inline-flex", ml: 4, mt: 0 }}>
+              <Typography
+                sx={{ fontSize: 12 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                Flight : {data.flightId} / Gate : {data.gatenumber} <br />
+                ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
+                Status : {data.remark}
+              </Typography>
+            </Box>
+          </ListItem>
+        ))}
+      </List>
+    </>
   );
 }
 
-const airline = "EK";
+const airline = "";
 
 export async function getStaticProps() {
   const url =
@@ -77,15 +64,12 @@ export async function getStaticProps() {
   const data = await res.data;
   const datas = data.response.body.items;
   const dataList = datas;
-  //const dataLists = dataList.items;
-  //const flightids = dataLists.flightId;
-  //console.log(dataList);
 
   return {
     props: {
       arrLists: dataList,
     },
-    // revalidate: 5,
+    revalidate: 5,
     // 20초가 지난 후 접속이 일어나면 파일을 새롭게 생성 (변경 사항이 반영되도록)
   };
 }

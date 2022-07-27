@@ -3,18 +3,19 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { List, ListItem } from "@mui/material";
-import Copyright from "../src/Copyright";
-import LO from "../src/LO";
 
 export default function arrData({ arrLists }) {
+  const KE5682 = arrLists.filter(function (arrLists) {
+    return arrLists.flightId === "KE5682";
+  });
   return (
     <>
       <List>
-        {arrLists.map((data) => (
+        {KE5682.map((data) => (
           <ListItem key={data.flightId} sx={{ pl: 3 }}>
             <Box sx={{ display: "inline-flex", ml: 4, mt: 0 }}>
               <Typography
-                sx={{ fontSize: 13 }}
+                sx={{ fontSize: 12 }}
                 color="text.secondary"
                 gutterBottom
               >
@@ -28,9 +29,10 @@ export default function arrData({ arrLists }) {
       </List>
     </>
   );
+  console.log(KE5682);
 }
 
-const airline = "HA";
+const airline = "";
 
 export async function getStaticProps() {
   const url =
