@@ -30,7 +30,7 @@ export default function arrData({ arrLists }) {
   );
 }
 
-const airline = "LH";
+const airline = "HA";
 
 export async function getStaticProps() {
   const url =
