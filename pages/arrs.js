@@ -5,8 +5,9 @@ import Typography from "@mui/material/Typography";
 import { List, ListItem } from "@mui/material";
 
 export default function arrData({ arrLists }) {
+  const FltNo = "OZ6782";
   const KE5682 = arrLists.filter(function (arrLists) {
-    return arrLists.flightId === "KE5682";
+    return arrLists.flightId === `${FltNo}`;
   });
   return (
     <>
@@ -29,10 +30,7 @@ export default function arrData({ arrLists }) {
       </List>
     </>
   );
-  console.log(KE5682);
 }
-
-const airline = "";
 
 export async function getStaticProps() {
   const url =
@@ -54,10 +52,7 @@ export async function getStaticProps() {
   queryParams +=
     "&" + encodeURIComponent("flight_id") + "=" + encodeURIComponent(""); /**/
   queryParams +=
-    "&" +
-    encodeURIComponent("airline") +
-    "=" +
-    encodeURIComponent(`${airline}`); /**/
+    "&" + encodeURIComponent("airline") + "=" + encodeURIComponent(""); /**/
   queryParams +=
     "&" + encodeURIComponent("lang") + "=" + encodeURIComponent("E"); /**/
   queryParams +=

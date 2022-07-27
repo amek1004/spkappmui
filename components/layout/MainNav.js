@@ -119,8 +119,8 @@ export default function MiniDrawer(props) {
               sx={{
                 ml: 0.3,
                 justifyContent: "center",
-                color: "black",
               }}
+              style={{ fill: "#757575" }}
             />
           </IconButton>
 
@@ -168,7 +168,7 @@ export default function MiniDrawer(props) {
               </ListItemIcon>
               <ListItemText
                 sx={{ opacity: open ? 1 : 0 }}
-                primary="Arrival Information"
+                secondary="Arrival Information"
               />
             </MenuItem>
           </Link>
