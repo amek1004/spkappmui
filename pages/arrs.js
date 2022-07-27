@@ -20,7 +20,7 @@ export default function arrData({ arrLists }) {
           <ListItem key={data.flightId}>
             <Box sx={{ display: "inline-flex" }}>
               <Typography
-                sx={{ fontSize: 12 }}
+                sx={{ fontSize: 13 }}
                 color="text.secondary"
                 gutterBottom
               >
@@ -37,7 +37,7 @@ export default function arrData({ arrLists }) {
           <ListItem key={data.flightId}>
             <Box sx={{ display: "inline-flex" }}>
               <Typography
-                sx={{ fontSize: 12 }}
+                sx={{ fontSize: 13 }}
                 color="text.secondary"
                 gutterBottom
               >
