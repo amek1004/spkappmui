@@ -24,7 +24,8 @@ export default function arrData({ arrLists }) {
                 color="text.secondary"
                 gutterBottom
               >
-                Flight : {data.flightId} / Gate : {data.gatenumber} <br />
+                Flight : {data.flightId} / Dep : {data.airportCode} / Gate :{" "}
+                {data.gatenumber} <br />
                 ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
                 Status : {data.remark}
               </Typography>
@@ -32,7 +33,7 @@ export default function arrData({ arrLists }) {
           </ListItem>
         ))}
       </List>
-      <List sx={{ pb: 0, ml: 6 }}>
+      <List sx={{ pb: 0, ml: 6, pt: 0 }}>
         {KE5682.map((data) => (
           <ListItem key={data.flightId}>
             <Box sx={{ display: "inline-flex" }}>
@@ -41,7 +42,8 @@ export default function arrData({ arrLists }) {
                 color="text.secondary"
                 gutterBottom
               >
-                Flight : {data.flightId} / Gate : {data.gatenumber} <br />
+                Flight : {data.flightId} / Dep : {data.airportCode} / Gate :{" "}
+                {data.gatenumber} <br />
                 ETA : {data.estimatedDateTime} / Carousel : {data.carousel} /
                 Status : {data.remark}
               </Typography>
