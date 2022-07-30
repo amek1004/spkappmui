@@ -5,7 +5,6 @@ import { List, ListItem } from "@mui/material";
 import React, { useState } from "react";
 
 export default function arrData({ arrLists }) {
-  console.log(arrLists);
   const FltNo = "";
   const LH = arrLists.filter(function (arrLists) {
     return arrLists.airline === "LUFTHANSA GERMAN AIRLINES";

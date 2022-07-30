@@ -9,16 +9,41 @@ import createEmotionCache from "../src/createEmotionCache";
 import MainNav from "../components/layout/MainNav";
 import { useEffect, useState } from "react";
 import Router from "next/router";
-//import NProgress from "nprogress";
-//import "nprogress/nprogress.css";
-//import FullScreenLoading from "../components/Loading";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+import FullScreenLoading from "../components/Loading";
 
 const clientSideEmotionCache = createEmotionCache();
 
 export default function MyApp(props) {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const start = () => {
+      // NProgress.start();
+      setLoading(true);
+    };
+    const end = () => {
+      // NProgress.done();
+      setLoading(false);
+    };
+
+    Router.events.on("routeChangeStart", start);
+    Router.events.on("routeChangeComplete", end);
+    Router.events.on("routeChangeError", end);
+
+    return () => {
+      Router.events.off("routeChangeStart", start);
+      Router.events.off("routeChangeComplete", end);
+      Router.events.off("routeChangeError", end);
+    };
+  }, []);
+
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
-  return (
+  return loading ? (
+    <FullScreenLoading />
+  ) : (
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
