@@ -17,6 +17,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
 import { Container } from "@mui/material";
 import FlightLandIcon from "@mui/icons-material/FlightLand";
+import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
@@ -168,7 +169,29 @@ export default function MiniDrawer(props) {
               </ListItemIcon>
               <ListItemText
                 sx={{ opacity: open ? 1 : 0 }}
-                secondary="Arrival Information"
+                secondary="Arrival"
+              />
+            </MenuItem>
+          </Link>
+        </MenuList>
+        <Divider />
+        <MenuList sx={{ py: 0 }}>
+          <Link href="/arrs">
+            <MenuItem
+              sx={{ py: 2, justifyContent: open ? "initial" : "center" }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <FlightTakeoffIcon fontSize="medium" />
+              </ListItemIcon>
+              <ListItemText
+                sx={{ opacity: open ? 1 : 0 }}
+                secondary="Departure"
               />
             </MenuItem>
           </Link>
