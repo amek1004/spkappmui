@@ -25,7 +25,7 @@ export default function arrData({ arrLists }) {
     return arrLists.airline === "TURKISH AIRLINES";
   });
   const EK = arrLists.filter(function (arrLists) {
-    return arrLists.flightId === "EK322";
+    return arrLists.airline === "EMIRATES AIRLINE";
   });
 
   return (
