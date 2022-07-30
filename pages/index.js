@@ -13,14 +13,14 @@ import { Box, Container } from "@mui/system";
 export default () => (
   <Container>
     <Box sx={{ pl: 6, pt: 2 }}>
-      <Typography componet="h2" variant="h4" gutterBottom>
-        Information
+      <Typography componet="h2" variant="h5" gutterBottom>
+        Information.
       </Typography>
 
       <Card elevation={5} sx={{}}>
         <CardHeader
           titleTypographyProps={{ variant: "h7" }}
-          title="Welcome Swissport Korea BSA"
+          title="Welcome to Swissport BSA"
         />
 
         <CardContent>
