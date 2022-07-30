@@ -19,18 +19,29 @@ export default () => (
 
       <Card elevation={5} sx={{}}>
         <CardHeader
-          titleTypographyProps={{ variant: "h6" }}
+          titleTypographyProps={{ variant: "h7" }}
           title="Welcome Swissport Korea BSA"
         />
 
         <CardContent>
-          <Typography variant="body1" component="p">
+          <Typography variant="body2" component="p">
             Under Construction. <br />
+            공사중 입니다. <br />
+            <br />
+            현재 가능한 기능은
+            <br />
+            여객편 출도착 정보가 가능합니다.
+            <br />
           </Typography>
         </CardContent>
         <CardActions>
-          <Button variant="contained" color="primary" sx={{ ml: 1, mb: 2 }}>
-            button
+          <Button
+            size="small"
+            variant="outlined"
+            color="primary"
+            sx={{ ml: 1, mb: 1 }}
+          >
+            PUSH
           </Button>
         </CardActions>
       </Card>
